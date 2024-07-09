@@ -8,4 +8,4 @@
 
 
 
-- this is a simple but intuituve clock app for windows which is ligghtweight,
+- this is a simple but intuituve clock app for windows which is lightweight,
