@@ -8,7 +8,7 @@ Zenark is a simple tkinter based application which can display current date and 
  - Displays the date and time in nicely formatted manner.
  - Modern fluent UI.
  - Runs a long running task without disrupting main GUI responsiveness.
-  (more features coming soon!)
+ - (more features coming soon!)
 
 
  ## Requirements
