@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import PhotoImage
 import time
 import threading 
 
@@ -9,12 +10,27 @@ def update_clock():
     clock_label.config(text=current_time)
     window.after(1000, update_clock)
 
+def long_running_task():
+    for i in range(5):
+        print(f'Long-running task: Step {i+1}')
+        time.sleep(2)
+    print('long-running task completed')
+
+
+def start_long_running_task():
+    task_thread = threading.Thread(target=long_running_task)
+    task_thread.start()
+
+
 window = tk.Tk()
 window.title("Zenark (beta)")
 window.geometry("400x300")
 window.configure(bg='#e2eafc') 
 
-window.iconbitmap('zenark/zenarkicon.ico')
+window.iconbitmap('zenark/zenark_titlebar_icon.ico')
+
+icon_image = PhotoImage(file='zenark/zenark_desktop_icon.pgm')
+window.iconphoto(True, icon_image)
 
 
 clock_label = tk.Label(window, font=('calibri', 40, 'bold'), background='#e2eafc', foreground='#abc4ff')
