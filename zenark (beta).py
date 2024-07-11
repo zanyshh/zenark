@@ -3,6 +3,8 @@ from tkinter import PhotoImage
 import time
 import threading 
 
+
+# Function that defines the functioning of the clock
 def update_clock():
     current_time = time.strftime('%I:%M:%S %p')
     current_day = time.strftime('%A')
@@ -10,6 +12,8 @@ def update_clock():
     clock_label.config(text=current_time)
     window.after(1000, update_clock)
 
+
+# Function that defines the long running task
 def long_running_task():
     for i in range(5):
         print(f'Long-running task: Step {i+1}')
@@ -17,6 +21,8 @@ def long_running_task():
     print('long-running task completed')
 
 
+
+# Function that defines starting long running task
 def start_long_running_task():
     task_thread = threading.Thread(target=long_running_task)
     task_thread.start()

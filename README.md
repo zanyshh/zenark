@@ -1,6 +1,6 @@
 ### Zenark (beta)
 
-![zerark demo] ()
+![zenark demo](zenark/zenark_demo.jpg)
 
 Zenark is a simple tkinter based application which can display current date and time. It also has the functionality to keep running
  in a seperate thread without buggging out the GUI.This project is currently in beta and more functionality would be added later.
