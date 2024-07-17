@@ -13,4 +13,4 @@ Zenark is a simple tkinter based application which can display current date and 
  ## Requirements
  - Python 3.x
  - 'tkinter' (if you are on linux seperately install it)
- - 'Pyinstaller' (for packaging [optional])
+ - 'Pyinstaller' (for packaging "optional")
