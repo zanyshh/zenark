@@ -18,7 +18,7 @@ def long_running_task():
     for i in range(5):
         print(f'Long-running task: Step {i+1}')
         time.sleep(2)
-    print('long-running task completed')
+        print('long-running task completed')
 
 
 
@@ -32,10 +32,10 @@ window = tk.Tk()
 window.title("Zenark (beta)")
 window.geometry("400x300")
 window.configure(bg='#e2eafc') 
+window.iconbitmap('zenark/resourses/zenark_titlebar_icon.ico')
 
-window.iconbitmap('zenark/zenark_titlebar_icon.ico')
-
-icon_image = PhotoImage(file='zenark/zenark_desktop_icon.pgm')
+# Taskbar icon setup
+icon_image = PhotoImage(file='zenark/resourses/zenark_desktop_icon.pgm')
 window.iconphoto(True, icon_image)
 
 
