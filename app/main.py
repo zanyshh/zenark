@@ -4,7 +4,7 @@ import time
 import threading 
 
 
-# Function that defines the functioning of the clock
+# Clock Functioning
 def update_clock():
     current_time = time.strftime('%I:%M:%S %p')
     current_day = time.strftime('%A')
@@ -13,7 +13,7 @@ def update_clock():
     window.after(1000, update_clock)
 
 
-# Function that defines the long running task
+# Defines the long running task
 def long_running_task():
     for i in range(5):
         print(f'Long-running task: Step {i+1}')
@@ -22,29 +22,35 @@ def long_running_task():
 
 
 
-# Function that defines starting long running task
+# Defines starting long running task
 def start_long_running_task():
     task_thread = threading.Thread(target=long_running_task)
     task_thread.start()
 
-
+# Window configuration
 window = tk.Tk()
 window.title("Zenark (beta)")
 window.geometry("400x300")
 window.configure(bg='#e2eafc') 
 window.iconbitmap('zenark/resourses/zenark_titlebar_icon.ico')
 
-# Taskbar icon setup
-icon_image = PhotoImage(file='zenark/resourses/zenark_desktop_icon.pgm')
+# Titlebar backgorund colour 
+title_bar = tk.Frame(window,bg="blue",height=25)                                                                                                         #❗not currently working, working on fix.
+title_bar.pack(fill='x')
+
+# Taskbar icon setup 
+icon_image = PhotoImage(file='zenark/resourses/zenark_desktop_icon.pgm')                                                                                  #❗not currently working,working on fix.
 window.iconphoto(True, icon_image)
 
-
+#Clock label config
 clock_label = tk.Label(window, font=('calibri', 40, 'bold'), background='#e2eafc', foreground='#abc4ff')
 clock_label.pack(anchor='center')
 
+#Day label config
 day_label = tk.Label(window, font=('calibri', 20, 'bold'), bg="#e2eafc", fg='#c1d3fe')
 day_label.pack()
 
-
 update_clock()
-window.mainloop()
+
+if __name__ == "__main__":
+    window.mainloop()
